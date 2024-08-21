@@ -1,0 +1,31 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User List</title>
+</head>
+<body>
+    <h1>User List</h1>
+
+    <form method="GET" action="/">
+        <input type="text" name="search" placeholder="Search usernames" value="<%= typeof search !== 'undefined' ? search : '' %>">
+        <button type="submit">Search</button>
+    </form>
+
+    <ul>
+        <% if (users.length > 0) { %>
+            <% users.forEach(user => { %>
+                <li><%= user.username %></li>
+            <% }); %>
+        <% } else { %>
+            <li>No users found.</li>
+        <% } %>
+    </ul>
+
+    <a href="/delete" onclick="return confirm('Are you sure you want to delete all users?');">
+        Delete All Users
+    </a>
+</body>
+</html>

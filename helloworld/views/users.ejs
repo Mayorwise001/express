@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Usernames</title>
+</head>
+<body>
+    <h1>Saved Usernames</h1>
+    <ul>
+        <% users.forEach(function(user) { %>
+            <li><%= user.username %></li>
+        <% }); %>
+    </ul>
+    <a href="/new">Add another username</a>
+</body>
+</html>
